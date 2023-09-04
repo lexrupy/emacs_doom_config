@@ -96,7 +96,12 @@
 
   (with-eval-after-load 'evil-maps
     (define-key evil-motion-state-map (kbd "Ç") 'evil-ex)
-    (define-key evil-motion-state-map (kbd "ç") 'evil-ex))
+    (define-key evil-motion-state-map (kbd "ç") 'evil-ex)
+    (define-key evil-normal-state-map (kbd "C-h") #'evil-window-left)
+    (define-key evil-normal-state-map (kbd "C-j") #'evil-window-down)
+    (define-key evil-normal-state-map (kbd "C-k") #'evil-window-up)
+    (define-key evil-normal-state-map (kbd "C-l") #'evil-window-right)
+    )
 )
 
 (map! :desc "Next Buffer" :n "<C-tab>" #'evil-next-buffer )
