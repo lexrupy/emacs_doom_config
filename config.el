@@ -79,13 +79,12 @@
 ;; they are implemented.
 
 ;; (add-to-list 'default-frame-alist '(alpha . 90))
-(set-frame-parameter nil 'alpha-background 80)
-(add-to-list 'default-frame-alist '(alpha-background . 80))
+(set-frame-parameter nil 'alpha-background 85)
+(add-to-list 'default-frame-alist '(alpha-background . 85))
 
 (after! treemacs
         (setq treemacs-show-hidden-files nil)
 )
-
 
 (defun turn-off-caps-lock()
   (interactive)
@@ -100,6 +99,7 @@
     (define-key evil-motion-state-map (kbd "ç") 'evil-ex))
 )
 
+(map! :desc "Next Buffer" :n "<C-tab>" #'evil-next-buffer )
 
 (use-package! tree-sitter
   :config
