@@ -112,11 +112,13 @@
       :desc "Find file (fd)"
       "f f" #'consult-fd)
 
-;; (use-package! tree-sitter
-;;   :config
-;;   (require 'tree-sitter-langs)
-;;   (global-tree-sitter-mode)
-;;   (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode))
+(after! tree-sitter
+  :config
+  (require 'tree-sitter-langs)
+  (global-tree-sitter-mode t)
+  (tree-sitter-hl-mode t)
+  )
+(add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
 
 (defun custom_banner ()
   (let* (
